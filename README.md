@@ -10,7 +10,7 @@ to code comments.
 
 #### Code Style
 
-This project uses the ['standard' eslint rules](https://github.com/standard/eslint-config-standard).
+This project uses the ['standard'](https://github.com/standard/eslint-config-standard), ['eslint:recommended'](https://eslint.org/docs/rules/), ['jest/all'](https://github.com/jest-community/eslint-plugin-jest#readme), and [custom](.eslintrc.json) eslint rules.
 
 To check the files for style rule violations run:
 
