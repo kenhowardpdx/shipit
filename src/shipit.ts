@@ -1,6 +1,6 @@
 (() => {
   const search = /!shipit/gi
-  const getShipitImage = () => {
+  const getShipitImage = (): string => {
     const squirrels = [
       'http://shipitsquirrel.github.io/images/ship%20it%20squirrel.png',
       'https://64.media.tumblr.com/tumblr_lybw63nzPp1r5bvcto1_500.jpg',
@@ -19,7 +19,7 @@
     const textAreas = document.getElementsByTagName('textarea')
     for (const t of textAreas) {
       const v = t.value
-      if (v.match(search)) {
+      if (Array.isArray(v.match(search))) {
         t.value = v.replace(search, markdownImg)
       }
     }

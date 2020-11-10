@@ -1,4 +1,4 @@
-const injectScript = (src, node) => {
+const injectScript = (src: string, node: string): void => {
   const [container] = document.getElementsByTagName(node)
   const script = document.createElement('script')
   script.setAttribute('type', 'text/javascript')

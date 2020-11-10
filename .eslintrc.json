@@ -3,5 +3,8 @@
     "browser": true,
     "webextensions": true
   },
-  "extends": "standard"
+  "extends": "standard-with-typescript",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  }
 }
