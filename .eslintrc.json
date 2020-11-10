@@ -3,8 +3,27 @@
     "browser": true,
     "webextensions": true
   },
-  "extends": "standard-with-typescript",
+  "extends": [
+    "standard-with-typescript",
+    "eslint:recommended",
+    "plugin:jest/all"
+  ],
   "parserOptions": {
-    "project": "./tsconfig.json"
+    "project": ["./tsconfig.json", "./tsconfig.test.json"]
+  },
+  "plugins": [
+    "jest"
+  ],
+  "rules": {
+    "comma-dangle": [
+      "error",
+      "always-multiline"
+    ],
+    "jest/consistent-test-it": [
+      "error",
+      {
+        "fn": "test"
+      }
+    ]
   }
 }
