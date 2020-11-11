@@ -1,0 +1,19 @@
+#!/bin/sh
+
+ARTIFACTS_DIR="artifacts"
+PACKAGE_DIR="_package"
+ZIP_FILE="shipit.zip"
+
+rm -rf $PACKAGE_DIR
+mkdir $PACKAGE_DIR
+
+cp README.md $PACKAGE_DIR
+cp -r dist/* $PACKAGE_DIR
+
+cd $PACKAGE_DIR
+
+zip -r -FS ../$ARTIFACTS_DIR/$ZIP_FILE *
+
+cd ..
+
+rm -rf $PACKAGE_DIR

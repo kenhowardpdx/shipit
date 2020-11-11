@@ -6,4 +6,4 @@ const injectScript = (src: string, node: string): void => {
   script.src = src
   container.appendChild(script)
 }
-injectScript(browser.extension.getURL('src/shipit.js'), 'body')
+injectScript(browser.extension.getURL('shipit.js'), 'body')

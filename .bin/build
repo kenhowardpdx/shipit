@@ -1,2 +1,2 @@
 #!/bin/sh
-npx tsc && cp ./node_modules/webextension-polyfill/dist/browser-polyfill.min.js ./dist/
+npx tsc && cp ./node_modules/webextension-polyfill/dist/browser-polyfill.min.js ./dist/ && cp ./src/manifest.json ./dist/
