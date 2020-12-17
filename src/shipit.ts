@@ -21,14 +21,14 @@
     }
     return squirrels[imageId]
   }
-  window.addEventListener('keyup', () => {
-    const markdownImg = `![SHIPIT](${getShipitImage(nextImageId)})`
-    const textAreas = document.getElementsByTagName('textarea')
-    for (const t of textAreas) {
+  const textAreas = document.getElementsByTagName('textarea')
+  for (const t of textAreas) {
+    t.addEventListener('keyup', () => {
       const v = t.value
       if (Array.isArray(v.match(search))) {
+        const markdownImg = `![SHIPIT](${getShipitImage(nextImageId)})`
         t.value = v.replace(search, markdownImg)
       }
-    }
-  })
+    })
+  }
 })()
