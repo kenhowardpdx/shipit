@@ -21,14 +21,16 @@
     }
     return squirrels[imageId]
   }
-  const textAreas = document.getElementsByTagName('textarea')
-  for (const t of textAreas) {
-    t.addEventListener('keyup', () => {
-      const v = t.value
-      if (Array.isArray(v.match(search))) {
-        const markdownImg = `![SHIPIT](${getShipitImage(nextImageId)})`
-        t.value = v.replace(search, markdownImg)
+  document.addEventListener('keyup', function (this: Document, e) {
+    if (this.querySelector('textarea') !== null) {
+      const textAreas = this.querySelectorAll('textarea')
+      for (const t of textAreas) {
+        const v = t.value
+        if (Array.isArray(v.match(search))) {
+          const markdownImg = `![SHIPIT](${getShipitImage(nextImageId)})`
+          t.value = v.replace(search, markdownImg)
+        }
       }
-    })
-  }
+    }
+  })
 })()
